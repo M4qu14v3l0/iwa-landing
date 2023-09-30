@@ -1,0 +1,50 @@
+---
+//	Components
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/shared/Button.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<section class="hero-general-section">
+			<div class="hero-text-section">
+				<div class="hero-text-title">
+					Exitoso y Reconocido
+					<span>Con una Web</span>
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Magnam, voluptate sunt corrupti modi dolorum neque culpa ab
+					pariatur velit illum!
+				</p>
+				<Button color="bg-black">Contactanos</Button>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hero-general-section {
+		margin: 0px auto;
+		max-width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 72px;
+	}
+
+	.hero-text-section {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	.hero-text-section .hero-text-title {
+		display: flex;
+		flex-direction: column;
+		font-weight: 700;
+		font-size: clamp(18px, 4vw, 68px);
+	}
+
+	.hero-text-section p {
+		font-size: 18px;
+	}
+</style>

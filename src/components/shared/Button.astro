@@ -1,0 +1,52 @@
+---
+interface Props {
+    color?: "bg-black" | "bg-yellow";
+    size?: "small-button" | "normal-button";
+}
+const { color, size } = Astro.props;
+---
+
+<a
+    href="#"
+    class:list={["standard", color || "bg-black", size || "normal-button"]}
+>
+    <slot />
+</a>
+
+<style>
+    .standard {
+        position: relative;
+        border-radius: 10px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        justify-content: center;
+        transition: all 0.2s ease-in;
+    }
+
+    .standard:hover {
+        transform: translateY(-5px);
+    }
+
+    .bg-yellow {
+        background-color: #fae053;
+        color: black;
+    }
+
+    .bg-black {
+        background-color: black;
+        color: white;
+    }
+
+    .normal-button {
+        width: 256px;
+        height: 55px;
+    }
+
+    .small-button {
+        width: 178px;
+        height: 36px;
+    }
+</style>
