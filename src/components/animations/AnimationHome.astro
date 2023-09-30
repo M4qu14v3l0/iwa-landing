@@ -1,0 +1,86 @@
+---
+const pictures: { pic: string }[] = [
+    { pic: "/pictures/hero/web_one.jpg" },
+    { pic: "/pictures/hero/web_two.jpg" },
+    { pic: "/pictures/hero/web_three.jpg" },
+    { pic: "/pictures/hero/web_four.png" },
+    { pic: "/pictures/hero/web_five.png" },
+    { pic: "/pictures/hero/web_six.png" },
+    { pic: "/pictures/hero/web_seven.jpg" },
+    { pic: "/pictures/hero/web_eigth.jpg" },
+];
+---
+
+<div class="animation">
+    <div class="box" id="bigBox">
+        <div class="content-box">
+            {pictures.map((picture) => <img src={picture.pic} alt="imagen" />)}
+        </div>
+    </div>
+</div>
+
+<style>
+    .animation {
+        position: relative;
+    }
+
+    .box {
+        position: absolute;
+        width: 1000px;
+        height: 1700px;
+        z-index: -1;
+        background-color: #fde68a;
+        transform: translateX(180px) translateY(-560px) rotate(34deg);
+        display: flex;
+        align-items: center;
+    }
+
+    .content-box {
+        margin-top: -400px;
+        margin-left: 100px;
+        width: 1000px;
+        height: 500px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .box img {
+        border-radius: 10px;
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const box = document.getElementById("bigBox");
+
+    gsap.from(box, {
+        opacity: 0,
+        x: 500,
+        duration: 1,
+    });
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".animation",
+            start: "-=200",
+            end: "+=800",
+            scrub: 1,
+            markers: true,
+        },
+    });
+
+    tl.to(box, {
+        transform: "rotate(0deg)",
+        duration: 1,
+    });
+</script>

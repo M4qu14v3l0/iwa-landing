@@ -2,6 +2,7 @@
 //	Components
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/shared/Button.astro";
+import AnimationHome from "../components/animations/AnimationHome.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -19,6 +20,7 @@ import Button from "../components/shared/Button.astro";
 				</p>
 				<Button color="bg-black">Contactanos</Button>
 			</div>
+			<AnimationHome />
 		</section>
 	</main>
 </Layout>
@@ -29,7 +31,9 @@ import Button from "../components/shared/Button.astro";
 		max-width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		padding: 72px;
+		margin-top: 200px;
+		padding-left: clamp(70px, 18%, 700px);
+		padding-right: clamp(70px, 18%, 700px);
 	}
 
 	.hero-text-section {
@@ -41,7 +45,7 @@ import Button from "../components/shared/Button.astro";
 		display: flex;
 		flex-direction: column;
 		font-weight: 700;
-		font-size: clamp(18px, 4vw, 68px);
+		font-size: clamp(18px, 4vw, 60px);
 	}
 
 	.hero-text-section p {
