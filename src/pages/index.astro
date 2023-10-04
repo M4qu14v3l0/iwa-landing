@@ -3,6 +3,7 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/shared/Button.astro";
 import AnimationHome from "../components/animations/AnimationHome.astro";
+import AnimationSellings from "../components/animations/AnimationSellings.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,21 +15,25 @@ import AnimationHome from "../components/animations/AnimationHome.astro";
 					<span>Con una Web</span>
 				</div>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Magnam, voluptate sunt corrupti modi dolorum neque culpa ab
-					pariatur velit illum!
+					En Isa Web Agency, entendemos que el tiempo es esencial en
+					el mundo empresarial. Es por eso que nos enorgullece ser tu
+					opción número uno para el desarrollo web rápido y eficaz.
 				</p>
 				<Button color="bg-black">Contactanos</Button>
 			</div>
 			<AnimationHome />
 		</section>
+		<AnimationSellings />
 	</main>
 </Layout>
 
 <style>
+	main {
+		height: 100%;
+	}
+
 	.hero-general-section {
 		margin: 0px auto;
-		max-width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		margin-top: 200px;

@@ -1,0 +1,184 @@
+---
+import Button from "../shared/Button.astro";
+---
+
+<div class="animationSellings" id="animationSellingsId">
+    <div class="slide slide-1">
+        <div class="selling-text-section">
+            <div class="selling-text-title">
+                Tu pagina web esta cerca, hace falta un click
+            </div>
+            <p>
+                En el mundo digital actual, tu presencia en línea es más crucial
+                que nunca. Una página web no es solo una opción, ¡es una
+                necesidad para cualquier empresa seria!
+            </p>
+            <Button color="bg-black">Click!</Button>
+        </div>
+        <div class="boxSellingsRight">
+            <div class="square2"></div>
+        </div>
+    </div>
+    <div class="slide slide-2">
+        <div class="selling-text-section">
+            <div class="selling-text-title">
+                Tu pagina web esta cerca, hace falta un click
+            </div>
+            <p>
+                En el mundo digital actual, tu presencia en línea es más crucial
+                que nunca. Una página web no es solo una opción, ¡es una
+                necesidad para cualquier empreasd
+            </p>
+            <Button color="bg-black">Click!</Button>
+        </div>
+        <div class="boxSellingsRight">
+            <div class="square"></div>
+        </div>
+    </div>
+    <div class="slide slide-3">
+        <div class="selling-text-section">
+            <div class="selling-text-title">
+                Tu pagina web esta cerca, hace falta un click
+            </div>
+            <p>En el mundo digitaaaaa</p>
+            <Button color="bg-black">Click!</Button>
+        </div>
+        <div class="boxSellingsRight">
+            <div class="square1"></div>
+        </div>
+    </div>
+</div>
+<div class="divisor"></div>
+
+<style>
+    .animationSellings {
+        margin-top: 240px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        /* padding-left: clamp(70px, 18%, 700px);
+        padding-right: clamp(70px, 18%, 700px); */
+        background-color: #fde68a;
+    }
+
+    .slide {
+        width: 100%;
+        position: absolute;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+    }
+
+    .slide > div {
+        width: 50%;
+        gap: 50px;
+    }
+
+    .selling-text-section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-left: clamp(70px, 18%, 700px);
+        padding-right: clamp(70px, 18%, 700px);
+    }
+
+    .selling-text-title {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-size: clamp(18px, 4vw, 60px);
+    }
+
+    /* animation stiles right and left */
+
+    .boxSellingsRight {
+        height: 100vh;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /*  test */
+
+    .square1 {
+        width: 500px;
+        height: 500px;
+        background-color: black;
+    }
+    .square2 {
+        width: 500px;
+        height: 500px;
+        background-color: green;
+    }
+
+    .square {
+        width: 500px;
+        height: 500px;
+        background-color: skyblue;
+    }
+
+    .divisor {
+        position: relative;
+        display: block;
+        height: 200000px;
+        width: 100%;
+        background-color: red;
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const box = document.getElementById("animationSellingsId");
+
+    let timelineBoxAppear = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".animationSellings",
+            start: "top center",
+            end: "top",
+            scrub: true,
+            // markers: {
+            //     startColor: "yellow",
+            //     endColor: "blue",
+            // },
+        },
+    });
+    timelineBoxAppear.fromTo(
+        box,
+        {
+            opacity: 0,
+            x: -1000,
+        },
+        {
+            opacity: 1,
+            x: 0,
+            duration: 1.5,
+        },
+    );
+
+    gsap.set(".slide-1", { opacity: 1 });
+
+    let timelineSlidePinned = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".animationSellings",
+            start: "top top",
+            scrub: true,
+            pin: true,
+            end: "bottom+=3000px",
+            // markers: true,
+        },
+    });
+    timelineSlidePinned.to(".slide-1", { opacity: 0 });
+    timelineSlidePinned.to(".slide-2", { opacity: 1 });
+    timelineSlidePinned.to(".slide-2", { opacity: 0 });
+    timelineSlidePinned.to(".slide-3", { opacity: 1 });
+</script>

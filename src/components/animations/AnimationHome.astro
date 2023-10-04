@@ -27,7 +27,7 @@ const pictures: { pic: string }[] = [
     .box {
         position: absolute;
         width: 1000px;
-        height: 1700px;
+        height: 1800px;
         z-index: -1;
         background-color: #fde68a;
         transform: translateX(180px) translateY(-560px) rotate(34deg);
@@ -36,8 +36,8 @@ const pictures: { pic: string }[] = [
     }
 
     .content-box {
-        margin-top: -400px;
-        margin-left: 100px;
+        margin-top: -960px;
+        margin-left: 50px;
         width: 1000px;
         height: 500px;
         position: relative;
@@ -73,14 +73,19 @@ const pictures: { pic: string }[] = [
         scrollTrigger: {
             trigger: ".animation",
             start: "-=200",
-            end: "+=800",
+            end: "+=700",
             scrub: 1,
-            markers: true,
         },
     });
 
     tl.to(box, {
         transform: "rotate(0deg)",
+        duration: 1,
+        backgroundColor: "#22c55e",
+    });
+    tl.to(box, {
+        opacity: 0,
+        x: 800,
         duration: 1,
     });
 </script>
