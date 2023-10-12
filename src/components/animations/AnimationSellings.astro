@@ -1,57 +1,50 @@
 ---
 import Button from "../shared/Button.astro";
+
+import clickAni from "../../../public/looties/click_animation.json";
+export const prerender = true;
+
+const slides_info = [
+    {
+        slide: "slide-1",
+        title: "Tu página web esta cerca, hace falta un click",
+        info: "En el mundo digital actual, tu presencia en línea es más crucial que nunca. Una página web no es solo una opción, ¡es una necesidad para cualquier empresa seria!",
+        lootie: clickAni,
+    },
+    {
+        slide: "slide-2",
+        title: "Desarrollo Rápido y Atractivo",
+        info: "En Isa Web Agency, entendemos la importancia de la velocidad en el mundo empresarial. Nuestro equipo altamente capacitado trabaja incansablemente para desarrollar sitios web atractivos y veloces que no solo cumplen con tus expectativas, sino que las superan. Creemos que un sitio web no solo debe ser funcional, sino también cautivador, y lo logramos sin comprometer la velocidad.",
+        lootie: "/videos/svg_animated/building_website.mp4",
+    },
+    {
+        slide: "slide-3",
+        title: "Éxito Empresarial a Través de tu Página Web",
+        info: "El verdadero éxito se mide en resultados. Te ayudamos a alcanzar tus objetivos empresariales utilizando tu nueva página web como una poderosa herramienta. Nuestros diseños impactantes y la optimización constante garantizan un aumento en la visibilidad en línea, la conversión de clientes y, en última instancia, el crecimiento de tu negocio. Juntos, alcanzamos el éxito empresarial que mereces. Con Isa Web Agency, no solo construyes un sitio web, construyes un camino hacia el éxito en línea. ¡Estamos aquí para convertir tus sueños digitales en realidad!",
+        lootie: "",
+    },
+];
 ---
 
 <div class="animationSellings" id="animationSellingsId">
-    <div class="slide slide-1">
-        <div class="selling-text-section">
-            <div class="selling-text-title">
-                Tu pagina web esta cerca, hace falta un click
+    {
+        slides_info.map((slide) => (
+            <div class={`slide ${slide.slide}`}>
+                <div class="selling-text-section">
+                    <div class="selling-text-title">{slide.title}</div>
+                    <p>{slide.info}</p>
+                    <Button color="bg-black">Click!</Button>
+                </div>
+                <div class="boxSellingsRight"></div>
             </div>
-            <p>
-                En el mundo digital actual, tu presencia en línea es más crucial
-                que nunca. Una página web no es solo una opción, ¡es una
-                necesidad para cualquier empresa seria!
-            </p>
-            <Button color="bg-black">Click!</Button>
-        </div>
-        <div class="boxSellingsRight">
-            <div class="square2"></div>
-        </div>
-    </div>
-    <div class="slide slide-2">
-        <div class="selling-text-section">
-            <div class="selling-text-title">
-                Desarrollo Rápido y Atractivo
-            </div>
-            <p>
-                En Isa Web Agency, entendemos la importancia de la velocidad en el mundo empresarial. Nuestro equipo altamente capacitado trabaja incansablemente para desarrollar sitios web atractivos y veloces que no solo cumplen con tus expectativas, sino que las superan. Creemos que un sitio web no solo debe ser funcional, sino también cautivador, y lo logramos sin comprometer la velocidad.
-            </p>
-            <Button color="bg-black">Click!</Button>
-        </div>
-        <div class="boxSellingsRight">
-            <div class="square"></div>
-        </div>
-    </div>
-    <div class="slide slide-3">
-        <div class="selling-text-section">
-            <div class="selling-text-title">
-                Éxito Empresarial a Través de tu Página Web
-            </div>
-            <p>El verdadero éxito se mide en resultados. Te ayudamos a alcanzar tus objetivos empresariales utilizando tu nueva página web como una poderosa herramienta. Nuestros diseños impactantes y la optimización constante garantizan un aumento en la visibilidad en línea, la conversión de clientes y, en última instancia, el crecimiento de tu negocio. Juntos, alcanzamos el éxito empresarial que mereces.
-            Con Isa Web Agency, no solo construyes un sitio web, construyes un camino hacia el éxito en línea. ¡Estamos aquí para convertir tus sueños digitales en realidad!</p>
-            <Button color="bg-black">Click!</Button>
-        </div>
-        <div class="boxSellingsRight">
-            <div class="square1"></div>
-        </div>
-    </div>
+        ))
+    }
 </div>
-<div class="divisor"></div>
+<!-- <div class="divisor"></div> -->
 
 <style>
     .animationSellings {
-        margin-top: 240px;
+        margin-top: 180px;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -74,16 +67,21 @@ import Button from "../shared/Button.astro";
     }
 
     .slide > div {
-        width: 50%;
+        width: 60%;
         gap: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .selling-text-section {
         display: flex;
         flex-direction: column;
         gap: 16px;
-        padding-left: clamp(70px, 18%, 700px);
-        padding-right: clamp(70px, 18%, 700px);
+        padding-left: clamp(70px, 18%, 100px);
+        padding-right: clamp(70px, 18%, 100px);
+        /* justify-content: center;
+        align-items: center; */
     }
 
     .selling-text-title {
@@ -97,29 +95,16 @@ import Button from "../shared/Button.astro";
 
     .boxSellingsRight {
         height: 100vh;
-        width: 50%;
+        width: 40%;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    /*  test */
-
-    .square1 {
-        width: 500px;
-        height: 500px;
-        background-color: black;
-    }
-    .square2 {
-        width: 500px;
-        height: 500px;
-        background-color: green;
-    }
-
-    .square {
-        width: 500px;
-        height: 500px;
-        background-color: skyblue;
+    .boxSellingsRight video {
+        width: 480px;
+        height: 480px;
+        border-radius: 20px;
     }
 
     .divisor {
@@ -144,7 +129,7 @@ import Button from "../shared/Button.astro";
             trigger: ".animationSellings",
             start: "top center",
             end: "top",
-            scrub: true,
+            scrub: 0.5,
             // markers: {
             //     startColor: "yellow",
             //     endColor: "blue",
