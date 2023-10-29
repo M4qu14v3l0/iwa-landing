@@ -2,12 +2,14 @@
 interface Props {
     color?: "bg-black" | "bg-yellow";
     size?: "small-button" | "normal-button";
+    link?: "#" | string;
 }
-const { color, size } = Astro.props;
+
+const { color, size, link } = Astro.props;
 ---
 
 <a
-    href="#"
+    href={link}
     class:list={["standard", color || "bg-black", size || "normal-button"]}
 >
     <slot />

@@ -8,18 +8,18 @@ const slides_info = [
         slide: "slide-1",
         title: "Tu página web esta cerca, hace falta un click",
         info: "En el mundo digital actual, tu presencia en línea es más crucial que nunca. Una página web no es solo una opción, ¡es una necesidad para cualquier empresa seria!",
-        lootie:"https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZ3JhbW1pbmclMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+        lootie: "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZ3JhbW1pbmclMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
     },
     {
         slide: "slide-2",
         title: "Desarrollo Rápido y Atractivo",
-        info: "En Isa Web Agency, entendemos la importancia de la velocidad en el mundo empresarial. Nuestro equipo altamente capacitado trabaja incansablemente para desarrollar sitios web atractivos y veloces que no solo cumplen con tus expectativas, sino que las superan. Creemos que un sitio web no solo debe ser funcional, sino también cautivador, y lo logramos sin comprometer la velocidad.",
+        info: "En Isa Web Agency, la velocidad es clave. Nuestro equipo altamente capacitado crea sitios web atractivos y veloces que superan tus expectativas sin sacrificar la funcionalidad. Enfocados en cautivar a tus visitantes, mantenemos la velocidad en primer plano.",
         lootie: "https://ivorysoluciones.com/wp-content/uploads/2018/03/gafas-ordenador.jpg",
     },
     {
         slide: "slide-3",
         title: "Éxito Empresarial a Través de tu Página Web",
-        info: "El verdadero éxito se mide en resultados. Te ayudamos a alcanzar tus objetivos empresariales utilizando tu nueva página web como una poderosa herramienta. Nuestros diseños impactantes y la optimización constante garantizan un aumento en la visibilidad en línea, la conversión de clientes y, en última instancia, el crecimiento de tu negocio. Juntos, alcanzamos el éxito empresarial que mereces. Con Isa Web Agency, no solo construyes un sitio web, construyes un camino hacia el éxito en línea. ¡Estamos aquí para convertir tus sueños digitales en realidad!",
+        info: "Alcanza tus objetivos empresariales con nosotros. Nuestros impactantes diseños y optimización constante aumentan la visibilidad en línea, la conversión de clientes y el crecimiento de tu negocio. Isa Web Agency es tu camino hacia el éxito en línea.",
         lootie: "https://i.blogs.es/3ea7db/1366_2000-23-/1366_2000.jpg",
     },
 ];
@@ -31,11 +31,13 @@ const slides_info = [
             <div class={`slide ${slide.slide}`}>
                 <div class="selling-text-section">
                     <div class="selling-text-title">{slide.title}</div>
-                    <p>{slide.info}</p>
-                    <Button color="bg-black">Click!</Button>
+                    <p class="selling-text-description">{slide.info}</p>
+                    <Button color="bg-black" link="#form_section">
+                        Click!
+                    </Button>
                 </div>
                 <div class="boxSellingsRight">
-                    <img src={slide.lootie}/>
+                    <img src={slide.lootie} />
                 </div>
             </div>
         ))
@@ -45,15 +47,13 @@ const slides_info = [
 
 <style>
     .animationSellings {
-        margin-top: 180px;
+        margin-top: -120px;
         position: relative;
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100vh;
-        /* padding-left: clamp(70px, 18%, 700px);
-        padding-right: clamp(70px, 18%, 700px);*/
-        background-color: #fde68a;
+        background-color: #fae053;
     }
 
     .slide {
@@ -76,20 +76,22 @@ const slides_info = [
     }
 
     .selling-text-section {
+        text-align: center;
         display: flex;
         flex-direction: column;
-        gap: 16px;
         padding-left: clamp(70px, 18%, 100px);
         padding-right: clamp(70px, 18%, 100px);
-        /* justify-content: center;
-        align-items: center; */
     }
 
     .selling-text-title {
         display: flex;
         flex-direction: column;
         font-weight: 700;
-        font-size: clamp(18px, 4vw, 60px);
+        font-size: clamp(18px, 4vw, 46px);
+    }
+
+    .selling-text-description {
+        font-size: clamp(18px, 4vw, 24px);
     }
 
     /* animation stiles right and left */
@@ -108,13 +110,13 @@ const slides_info = [
         border-radius: 20px;
     }
 
-    .divisor {
+    /* .divisor {
         position: relative;
         display: block;
         height: 200000px;
         width: 100%;
         background-color: red;
-    }
+    } */
 </style>
 
 <script>

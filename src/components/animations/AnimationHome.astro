@@ -8,6 +8,22 @@ const pictures: { pic: string }[] = [
     { pic: "/pictures/hero/web_six.webp" },
     { pic: "/pictures/hero/web_seven.webp" },
     { pic: "/pictures/hero/web_eigth.webp" },
+    { pic: "/pictures/hero/web_one.webp" },
+    { pic: "/pictures/hero/web_two.webp" },
+    { pic: "/pictures/hero/web_three.webp" },
+    { pic: "/pictures/hero/web_four.webp" },
+    { pic: "/pictures/hero/web_five.webp" },
+    { pic: "/pictures/hero/web_six.webp" },
+    { pic: "/pictures/hero/web_seven.webp" },
+    { pic: "/pictures/hero/web_eigth.webp" },
+    { pic: "/pictures/hero/web_one.webp" },
+    { pic: "/pictures/hero/web_two.webp" },
+    { pic: "/pictures/hero/web_three.webp" },
+    { pic: "/pictures/hero/web_four.webp" },
+    { pic: "/pictures/hero/web_five.webp" },
+    { pic: "/pictures/hero/web_six.webp" },
+    { pic: "/pictures/hero/web_seven.webp" },
+    { pic: "/pictures/hero/web_eigth.webp" },
 ];
 ---
 
@@ -26,20 +42,23 @@ const pictures: { pic: string }[] = [
 
     .box {
         position: absolute;
-        width: 1000px;
-        height: 1800px;
+        /* width: 1000px;
+        height: 1800px; */
+        width: 200vw;
+        height: 300vh;
         z-index: -1;
-        background-color: #fde68a;
-        transform: translateX(180px) translateY(-560px) rotate(34deg);
+        background-color: #fae053;
+        margin-top: -200px;
+        transform: translateX(80px) translateY(-700px) rotate(34deg);
         display: flex;
         align-items: center;
     }
 
     .content-box {
-        margin-top: -700px;
+        margin-top: 20%;
         margin-left: 50px;
-        width: 1000px;
-        height: 500px;
+        /* width: 1000px;
+        height: 500px; */
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -72,9 +91,10 @@ const pictures: { pic: string }[] = [
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".animation",
-            start: "-=200",
+            start: "-=380",
             end: "+=600",
             scrub: 1,
+            // markers: true,
         },
     });
 

@@ -1,0 +1,98 @@
+---
+import Button from "./shared/Button.astro";
+---
+
+<section class="form-general-section" id="form_section">
+    <h2>Contáctanos</h2>
+    <form class="form-section">
+        <div class="inputs-container">
+            <div class="input-form">
+                <label>Nombres</label>
+                <input type="text" placeholder="" />
+            </div>
+            <div class="input-form">
+                <label>Apellidos</label>
+                <input type="text" placeholder="" />
+            </div>
+            <div class="input-form">
+                <label>Correo Electronico</label>
+                <input type="text" placeholder="" />
+            </div>
+            <div class="input-form">
+                <label>Numero de contacto</label>
+                <input type="text" placeholder="" />
+            </div>
+        </div>
+        <div class="button-form">
+            <Button color="bg-yellow" size="normal-button">Enviar</Button>
+        </div>
+    </form>
+</section>
+
+<style>
+    .form-general-section {
+        margin-left: clamp(70px, 18%, 700px);
+        margin-right: clamp(70px, 18%, 700px);
+        margin-top: 200px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+
+    .form-general-section h2 {
+        text-align: center;
+        font-size: clamp(20px, 4vw, 40px);
+    }
+
+    .form-section {
+        margin: 0px auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .inputs-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        justify-items: center;
+
+        gap: 20px;
+    }
+
+    .input-form {
+        position: relative;
+        height: 40px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 10px;
+        border: 1px solid;
+    }
+
+    .input-form label {
+        position: absolute;
+        font-size: 12px;
+        background-color: white;
+        padding: 0px 10px;
+        top: -9px;
+        left: 20px;
+    }
+
+    .input-form input {
+        border-radius: 10px;
+        height: 100%;
+        padding: 12px 18px;
+        border: none;
+    }
+
+    .button-form {
+        margin: 0px auto;
+    }
+</style>

@@ -1,0 +1,114 @@
+---
+import ArrowRight from "./icons/ArrowRight.astro";
+import Handshake from "./icons/Handshake.astro";
+import Multiple from "./icons/Multiple.astro";
+import Star from "./icons/Star.astro";
+---
+
+<section class="benefits-general-section">
+    <div class="card">
+        <div class="icon-card">
+            <Star />
+        </div>
+        <h2>Experiencia de Usuario en el Centro del Diseño</h2>
+        <p>
+            Priorizamos la usabilidad y la interacción para que tus visitantes
+            tengan una experiencia excepcional en tu sitio web.
+        </p>
+        <a href="#form_section">Contactanos <ArrowRight /></a>
+    </div>
+    <div class="card">
+        <div class="icon-card">
+            <Handshake />
+        </div>
+        <h2>Tu Socio en la Toma de Decisiones</h2>
+        <p>
+            Te ayudamos a tomar decisiones informadas, adaptando tu sitio web a
+            las necesidades únicas de tu negocio.
+        </p>
+        <a href="#form_section">Contactanos <ArrowRight /></a>
+    </div>
+    <div class="card">
+        <div class="icon-card">
+            <Multiple />
+        </div>
+        <h2>Flexibilidad en la Construcción</h2>
+        <p>
+            Ofrecemos opciones eficientes, como WordPress, y desarrollo a medida
+            para un sitio web único, moderno y rápido.
+        </p>
+        <a href="#form_section">Contactanos <ArrowRight /></a>
+    </div>
+</section>
+
+<style>
+    .benefits-general-section {
+        margin: 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 200px;
+        padding-left: clamp(70px, 18%, 700px);
+        padding-right: clamp(70px, 18%, 700px);
+    }
+
+    .card {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: 0.5s all ease;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fae053;
+        z-index: -1;
+    }
+
+    .card::after {
+        content: "";
+        position: absolute;
+        top: 76px;
+        left: 78px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #22c55e;
+        z-index: -1;
+    }
+
+    .card h2 {
+        font-size: clamp(18px, 2vw, 32px);
+    }
+
+    .card a {
+        position: absolute;
+        bottom: 20px;
+        text-decoration: none;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 20px;
+        color: black;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+    .icon-card {
+        fill: black;
+        height: 65px;
+    }
+</style>

@@ -1,0 +1,91 @@
+---
+import DigitalOcean from "./icons/Partners/DigitalOcean.astro";
+import Nodejs from "./icons/Partners/Nodejs.astro";
+import Wordpress from "./icons/Partners/Wordpress.astro";
+import GitHub from "./icons/Partners/GitHub.astro";
+import Namecheap from "./icons/Partners/Namecheap.astro";
+import Hubspot from "./icons/Partners/Hubspot.astro";
+---
+
+<section class="footer-general-container">
+    <footer class="footer-container">
+        <div class="divisor-right">
+            <h2>Logo</h2>
+        </div>
+        <div class="divisor-right">
+            <h2>Partners</h2>
+            <div class="icons-footer">
+                <Namecheap />
+                <Hubspot />
+            </div>
+        </div>
+        <div>
+            <h2>Trabajamos con</h2>
+            <div class="icons-footer">
+                <DigitalOcean />
+                <GitHub />
+                <Nodejs />
+                <Wordpress />
+            </div>
+        </div>
+    </footer>
+    <div class="footer-sub">
+        <div>Redes sociales</div>
+        <div>ISA web agency todos los derechos reservados</div>
+    </div>
+</section>
+
+<style>
+    .footer-general-container {
+        margin-top: 200px;
+        width: 100%;
+        height: 300px;
+        background-color: black;
+        color: white;
+    }
+    .footer-container {
+        display: grid;
+        height: 250px;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-left: clamp(70px, 18%, 700px);
+        padding-right: clamp(70px, 18%, 700px);
+    }
+
+    .footer-container > div {
+        padding: 0px 40px;
+    }
+
+    .divisor-right {
+        position: relative;
+    }
+
+    .divisor-right::after {
+        content: "";
+        position: absolute;
+        height: 160px;
+        width: 1px;
+        background-color: #fae053;
+        right: 0;
+        top: 50%;
+        margin-top: -80px;
+    }
+
+    .footer-sub {
+        height: 50px;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .icons-footer {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        fill: white;
+    }
+</style>

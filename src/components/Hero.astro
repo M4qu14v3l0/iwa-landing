@@ -1,0 +1,48 @@
+---
+import Button from "../components/shared/Button.astro";
+import AnimationHome from "../components/animations/AnimationHome.astro";
+---
+
+<section class="hero-general-section">
+    <div class="hero-text-section">
+        <div class="hero-text-title">
+            Exitoso y Reconocido
+            <span>Con una Web</span>
+        </div>
+        <p>
+            En Isa Web Agency, entendemos que el tiempo es esencial en el mundo
+            empresarial. Es por eso que nos enorgullece ser tu opción número uno
+            para el desarrollo web rápido y eficaz.
+        </p>
+        <Button color="bg-black" link="#form_section">Contactanos</Button>
+    </div>
+    <AnimationHome />
+</section>
+
+<style>
+    .hero-general-section {
+        margin: 0px auto;
+        height: 100vh;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        padding-left: clamp(70px, 18%, 700px);
+        padding-right: clamp(70px, 18%, 700px);
+    }
+
+    .hero-text-section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .hero-text-section .hero-text-title {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        font-size: clamp(18px, 4vw, 60px);
+    }
+
+    .hero-text-section p {
+        font-size: 18px;
+    }
+</style>
