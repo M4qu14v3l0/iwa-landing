@@ -111,4 +111,20 @@ import Star from "./icons/Star.astro";
         fill: black;
         height: 65px;
     }
+
+    @media (max-width: 1200px) {
+        .benefits-general-section {
+            margin-top: 100px;
+            padding-left: clamp(100px, 10vw, 200px);
+            padding-right: clamp(100px, 10vw, 200px);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .benefits-general-section {
+            margin-top: 100px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
 </style>

@@ -1,91 +1,177 @@
 ---
-import DigitalOcean from "./icons/Partners/DigitalOcean.astro";
-import Nodejs from "./icons/Partners/Nodejs.astro";
-import Wordpress from "./icons/Partners/Wordpress.astro";
-import GitHub from "./icons/Partners/GitHub.astro";
-import Namecheap from "./icons/Partners/Namecheap.astro";
-import Hubspot from "./icons/Partners/Hubspot.astro";
+import Facebook from "./icons/Social/Facebook.astro";
+import Instagram from "./icons/Social/Instagram.astro";
+import Linkedin from "./icons/Social/Linkedin.astro";
 ---
 
-<section class="footer-general-container">
-    <footer class="footer-container">
-        <div class="divisor-right">
-            <h2>Logo</h2>
-        </div>
-        <div class="divisor-right">
-            <h2>Partners</h2>
-            <div class="icons-footer">
-                <Namecheap />
-                <Hubspot />
-            </div>
-        </div>
-        <div>
-            <h2>Trabajamos con</h2>
-            <div class="icons-footer">
-                <DigitalOcean />
-                <GitHub />
-                <Nodejs />
-                <Wordpress />
-            </div>
-        </div>
-    </footer>
-    <div class="footer-sub">
-        <div>Redes sociales</div>
-        <div>ISA web agency todos los derechos reservados</div>
+<footer>
+    <div class="background">
+        <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="100%"
+            height="100%"
+            viewBox="0 0 1200 1000"
+        >
+            <defs>
+                <linearGradient id="bg" x2="0%" y2="100%">
+                    <stop
+                        offset="0%"
+                        style="stop-color: rgba(255, 222, 89, 0.6)"></stop>
+                    <stop
+                        offset="100%"
+                        style="stop-color: rgba(255, 222, 89, 0.06)"></stop>
+                </linearGradient>
+                <path
+                    id="wave"
+                    fill="url(#bg)"
+                    d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+    s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
+                ></path>
+            </defs>
+            <g>
+                <use xlink:href="#wave" opacity=".3">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        dur="8s"
+                        calcMode="spline"
+                        values="270 230; -334 180; 270 230"
+                        keyTimes="0; .5; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                        repeatCount="indefinite"></animateTransform>
+                </use>
+                <use xlink:href="#wave" opacity=".6">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        dur="6s"
+                        calcMode="spline"
+                        values="-270 230;243 220;-270 230"
+                        keyTimes="0; .6; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                        repeatCount="indefinite"></animateTransform>
+                </use>
+                <use xlink:href="#wave" opacity=".9">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        dur="4s"
+                        calcMode="spline"
+                        values="0 230;-140 200;0 230"
+                        keyTimes="0; .4; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                        repeatCount="indefinite"></animateTransform>
+                </use>
+            </g>
+        </svg>
     </div>
-</section>
+
+    <section>
+        <ul class="socials">
+            <li><a><Facebook /></a></li>
+            <li><a><Linkedin /></a></li>
+            <li><a><Instagram /></a></li>
+        </ul>
+        <ul>
+            <p>
+                "En Isa Web Agency, transformamos tu visión en una experiencia
+                web que cautiva, convierte y triunfa en el mundo digital. Tu
+                éxito es nuestro código fuente."
+            </p>
+        </ul>
+        <p class="legal">ISA © 2023 All rights reserved</p>
+    </section>
+</footer>
 
 <style>
-    .footer-general-container {
-        margin-top: 200px;
-        width: 100%;
-        height: 300px;
-        background-color: black;
-        color: white;
-    }
-    .footer-container {
-        display: grid;
-        height: 250px;
-        justify-content: center;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding-left: clamp(70px, 18%, 700px);
-        padding-right: clamp(70px, 18%, 700px);
-    }
-
-    .footer-container > div {
-        padding: 0px 40px;
-    }
-
-    .divisor-right {
-        position: relative;
-    }
-
-    .divisor-right::after {
-        content: "";
+    .background {
         position: absolute;
-        height: 160px;
-        width: 1px;
-        background-color: #fae053;
+        z-index: -1;
+        top: 0;
+        left: 0;
         right: 0;
-        top: 50%;
-        margin-top: -80px;
+        bottom: 0;
+    }
+    svg {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(3.2) scaleX(2.25);
+        transform-origin: bottom;
+        box-sizing: border-box;
+        display: block;
+        pointer-events: none;
     }
 
-    .footer-sub {
-        height: 50px;
-        background-color: white;
-        color: black;
+    footer {
+        position: relative;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 460px;
+        margin-top: 180px;
+        overflow: hidden;
     }
 
-    .icons-footer {
+    section {
         display: flex;
-        justify-content: left;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+        gap: 30px;
+        width: 100%;
+
+        padding-left: clamp(60px, 40vw, 200px);
+        padding-right: clamp(60px, 40vw, 200px);
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
         gap: 20px;
-        fill: white;
+    }
+
+    ul p {
+        text-align: center;
+        font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+        svg {
+            top: 100px;
+            transform: scaleY(2) scaleX(1.25);
+        }
+
+        footer {
+            text-align: center;
+            height: 360px;
+            margin-top: 180px;
+        }
+
+        ul {
+            margin: 0;
+        }
+        section {
+            gap: 10px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 900px) {
+        section {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 </style>

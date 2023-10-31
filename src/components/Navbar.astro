@@ -3,10 +3,13 @@ import Button from "./shared/Button.astro";
 ---
 
 <header class="header-nav">
-    <h2>Isa Web Agency</h2>
+    <div class="logo-section">
+        <h2>ISA</h2>
+    </div>
+
     <nav class="links-nav">
-        <a href="">Lo que hacemos</a>
-        <a href="">Redes</a>
+        <!-- <a href="">Lo que hacemos</a>
+        <a href="">Redes</a> -->
         <Button color="bg-yellow" size="small-button" link="#form_section">
             Contactanos
         </Button>
@@ -19,10 +22,24 @@ import Button from "./shared/Button.astro";
         justify-content: space-between;
         align-items: center;
         background-color: white;
-        padding-left: clamp(70px, 18%, 700px);
-        padding-right: clamp(70px, 18%, 700px);
+        padding-left: clamp(60px, 40vw, 200px);
+        padding-right: clamp(60px, 40vw, 200px);
         max-width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
+
+    .logo-section {
+        display: flex;
+        gap: 10px;
+    }
+    /* 
+    .logo-section h2 {
+        margin: 10px;
+    } */
+    /* .logo-section img {
+        width: 80px;
+        height: 80px;
+    } */
 
     .links-nav {
         display: flex;
@@ -37,5 +54,19 @@ import Button from "./shared/Button.astro";
         text-decoration: none;
         color: black;
         font-weight: 600;
+    }
+
+    @media (max-width: 1200px) {
+        .header-nav {
+            padding-left: clamp(100px, 10vw, 200px);
+            padding-right: clamp(100px, 10vw, 200px);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .header-nav {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
     }
 </style>

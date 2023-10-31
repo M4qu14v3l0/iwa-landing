@@ -2,48 +2,58 @@
 import Button from "../shared/Button.astro";
 
 export const prerender = true;
-
-const slides_info = [
-    {
-        slide: "slide-1",
-        title: "Tu página web esta cerca, hace falta un click",
-        info: "En el mundo digital actual, tu presencia en línea es más crucial que nunca. Una página web no es solo una opción, ¡es una necesidad para cualquier empresa seria!",
-        lootie: "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZ3JhbW1pbmclMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-    },
-    {
-        slide: "slide-2",
-        title: "Desarrollo Rápido y Atractivo",
-        info: "En Isa Web Agency, la velocidad es clave. Nuestro equipo altamente capacitado crea sitios web atractivos y veloces que superan tus expectativas sin sacrificar la funcionalidad. Enfocados en cautivar a tus visitantes, mantenemos la velocidad en primer plano.",
-        lootie: "https://ivorysoluciones.com/wp-content/uploads/2018/03/gafas-ordenador.jpg",
-    },
-    {
-        slide: "slide-3",
-        title: "Éxito Empresarial a Través de tu Página Web",
-        info: "Alcanza tus objetivos empresariales con nosotros. Nuestros impactantes diseños y optimización constante aumentan la visibilidad en línea, la conversión de clientes y el crecimiento de tu negocio. Isa Web Agency es tu camino hacia el éxito en línea.",
-        lootie: "https://i.blogs.es/3ea7db/1366_2000-23-/1366_2000.jpg",
-    },
-];
 ---
 
 <div class="animationSellings" id="animationSellingsId">
-    {
-        slides_info.map((slide) => (
-            <div class={`slide ${slide.slide}`}>
-                <div class="selling-text-section">
-                    <div class="selling-text-title">{slide.title}</div>
-                    <p class="selling-text-description">{slide.info}</p>
-                    <Button color="bg-black" link="#form_section">
-                        Click!
-                    </Button>
-                </div>
-                <div class="boxSellingsRight">
-                    <img src={slide.lootie} />
-                </div>
+    <div class={`slide slide-1`}>
+        <div class="selling-text-section">
+            <div class="selling-text-title">
+                Tu página web esta <span class="highlight-word">cerca</span>,
+                hace falta un <span class="highlight-word">click</span>
             </div>
-        ))
-    }
+            <p class="selling-text-description">
+                En el mundo digital actual, tu presencia en línea es más crucial
+                que nunca. Una página web no es solo una opción, ¡es una
+                necesidad para cualquier empresa seria!
+            </p>
+            <Button color="bg-black" link="#form_section">Click!</Button>
+        </div>
+    </div>
+    <div class={`slide slide-2`}>
+        <div class="selling-text-section">
+            <div class="selling-text-title">
+                Desarrollo <span class="highlight-word">rápido</span> y <span
+                    class="highlight-word">atractivo</span
+                >
+            </div>
+            <p class="selling-text-description">
+                En Isa Web Agency, la velocidad es clave. Nuestro equipo
+                altamente capacitado crea sitios web atractivos y veloces que
+                superan tus expectativas sin sacrificar la funcionalidad.
+                Enfocados en cautivar a tus visitantes, mantenemos la velocidad
+                en primer plano.
+            </p>
+            <Button color="bg-black" link="#form_section">Click!</Button>
+        </div>
+    </div>
+    <div class={`slide slide-3`}>
+        <div class="selling-text-section">
+            <div class="selling-text-title">
+                <span class="highlight-word">Éxito</span> empresarial a través
+                de tu
+                <span class="highlight-word">página web</span>
+            </div>
+            <p class="selling-text-description">
+                Alcanza tus objetivos empresariales con nosotros. Nuestros
+                impactantes diseños y optimización constante aumentan la
+                visibilidad en línea, la conversión de clientes y el crecimiento
+                de tu negocio. Isa Web Agency es tu camino hacia el éxito en
+                línea.
+            </p>
+            <Button color="bg-black" link="#form_section">Click!</Button>
+        </div>
+    </div>
 </div>
-<!-- <div class="divisor"></div> -->
 
 <style>
     .animationSellings {
@@ -53,7 +63,17 @@ const slides_info = [
         flex-direction: column;
         width: 100%;
         height: 100vh;
-        background-color: #fae053;
+    }
+
+    .slide-1 {
+        background-color: var(--primary);
+    }
+    .slide-2 {
+        background-color: var(--secondary);
+    }
+    .slide-3 {
+        color: white;
+        background-color: var(--tertiary);
     }
 
     .slide {
@@ -65,27 +85,19 @@ const slides_info = [
         justify-content: center;
         align-items: center;
         opacity: 0;
-    }
-
-    .slide > div {
-        width: 60%;
-        gap: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        z-index: -2;
     }
 
     .selling-text-section {
-        text-align: center;
+        position: relative;
+        text-align: left;
         display: flex;
         flex-direction: column;
-        padding-left: clamp(70px, 18%, 100px);
-        padding-right: clamp(70px, 18%, 100px);
+        padding-left: clamp(200px, 40vw, 400px);
+        padding-right: clamp(200px, 40vw, 400px);
     }
 
     .selling-text-title {
-        display: flex;
-        flex-direction: column;
         font-weight: 700;
         font-size: clamp(18px, 4vw, 46px);
     }
@@ -94,29 +106,46 @@ const slides_info = [
         font-size: clamp(18px, 4vw, 24px);
     }
 
-    /* animation stiles right and left */
-
-    .boxSellingsRight {
-        height: 100vh;
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
     .boxSellingsRight img {
-        width: 480px;
-        height: 480px;
+        width: 300px;
+        height: 300px;
         border-radius: 20px;
     }
 
-    /* .divisor {
-        position: relative;
-        display: block;
-        height: 200000px;
-        width: 100%;
-        background-color: red;
-    } */
+    @media (max-width: 1200px) {
+        .selling-text-section {
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+            padding-left: clamp(100px, 50vw, 200px);
+            padding-right: clamp(100px, 50vw, 200px);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .selling-text-title {
+            font-weight: 700;
+            font-size: 25px;
+        }
+
+        .selling-text-section {
+            padding-left: clamp(20px, 20vw, 200px);
+            padding-right: clamp(20px, 20vw, 200px);
+        }
+
+        .selling-text-description {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .selling-text-section {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
 </style>
 
 <script>
@@ -152,7 +181,7 @@ const slides_info = [
         },
     );
 
-    gsap.set(".slide-1", { opacity: 1 });
+    gsap.set(".slide-1", { opacity: 1, zIndex: 1 });
 
     let timelineSlidePinned = gsap.timeline({
         scrollTrigger: {
@@ -164,8 +193,8 @@ const slides_info = [
             // markers: true,
         },
     });
-    timelineSlidePinned.to(".slide-1", { opacity: 0 });
-    timelineSlidePinned.to(".slide-2", { opacity: 1 });
-    timelineSlidePinned.to(".slide-2", { opacity: 0 });
-    timelineSlidePinned.to(".slide-3", { opacity: 1 });
+    timelineSlidePinned.to(".slide-1", { opacity: 0, zIndex: -2 });
+    timelineSlidePinned.to(".slide-2", { opacity: 1, zIndex: 1 });
+    timelineSlidePinned.to(".slide-2", { opacity: 0, zIndex: -2 });
+    timelineSlidePinned.to(".slide-3", { opacity: 1, zIndex: 1 });
 </script>

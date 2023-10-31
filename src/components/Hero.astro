@@ -6,8 +6,10 @@ import AnimationHome from "../components/animations/AnimationHome.astro";
 <section class="hero-general-section">
     <div class="hero-text-section">
         <div class="hero-text-title">
-            Exitoso y Reconocido
-            <span>Con una Web</span>
+            <span class="hw-h-p hw-size">EXITOSO</span> y <br />
+            <span class="hw-h-s hw-size">RECONOCIDO</span>
+            <br />
+             con una <span class="hw-h-t hw-size">web</span>
         </div>
         <p>
             En Isa Web Agency, entendemos que el tiempo es esencial en el mundo
@@ -21,13 +23,13 @@ import AnimationHome from "../components/animations/AnimationHome.astro";
 
 <style>
     .hero-general-section {
-        margin: 0px auto;
+        position: relative;
         height: 100vh;
         display: grid;
         align-items: center;
         grid-template-columns: 1fr 1fr;
-        padding-left: clamp(70px, 18%, 700px);
-        padding-right: clamp(70px, 18%, 700px);
+        padding-left: clamp(60px, 40vw, 200px);
+        padding-right: clamp(60px, 40vw, 200px);
     }
 
     .hero-text-section {
@@ -36,13 +38,43 @@ import AnimationHome from "../components/animations/AnimationHome.astro";
         gap: 16px;
     }
     .hero-text-section .hero-text-title {
-        display: flex;
-        flex-direction: column;
         font-weight: 700;
-        font-size: clamp(18px, 4vw, 60px);
+        font-size: clamp(18px, 2vw, 40px);
     }
 
     .hero-text-section p {
-        font-size: 18px;
+        font-size: clamp(14px, 2vw, 18px);
+    }
+
+    @media (max-width: 1200px) {
+        .hero-general-section {
+            padding-left: clamp(100px, 10vw, 200px);
+            padding-right: clamp(100px, 10vw, 200px);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .hero-general-section {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-text-section {
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .hero-general-section {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+
+    @media (max-height: 800px) {
+        .hero-general-section {
+            margin: -30px auto;
+        }
     }
 </style>
