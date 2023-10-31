@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import AnimationSellings from "../components/animations/AnimationSellings.astro";
 import Hero from "../components/Hero.astro";
 import Benefits from "../components/Benefits.astro";
-import Form from "../components/Form.astro";
+import Form from "../components/Form.svelte";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,7 +13,7 @@ import Form from "../components/Form.astro";
 		<Hero />
 		<AnimationSellings />
 		<Benefits />
-		<Form />
+		<Form client:only />
 	</main>
 </Layout>
 

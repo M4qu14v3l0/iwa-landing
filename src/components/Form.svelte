@@ -1,30 +1,47 @@
----
-import Button from "./shared/Button.astro";
----
+<script>
+    import emailjs from "@emailjs/browser";
+    function sendEmail(e) {
+        emailjs
+            .sendForm(
+                "service_9n9mmqv",
+                "template_4aqt93l",
+                e.target,
+                "_TMHiaJfNVMWSyBF8",
+            )
+            .then(
+                (result) => {
+                    console.log("SUCCESS!", result.text);
+                },
+                (error) => {
+                    console.log("FAILED...", error.text);
+                },
+            );
+    }
+</script>
 
-<section class="form-general-section" id="form_section">
+<section class="form-general-section">
     <h2>Contáctanos</h2>
-    <form class="form-section">
+    <form class="form-section" on:submit|preventDefault={sendEmail}>
         <div class="inputs-container">
             <div class="input-form">
                 <label>Nombres</label>
-                <input type="text" placeholder="" />
+                <input type="text" placeholder="" name="name" required />
             </div>
             <div class="input-form">
                 <label>Apellidos</label>
-                <input type="text" placeholder="" />
+                <input type="text" placeholder="" name="lastname" required />
             </div>
             <div class="input-form">
                 <label>Correo Electronico</label>
-                <input type="text" placeholder="" />
+                <input type="email" placeholder="" name="email" required />
             </div>
             <div class="input-form">
                 <label>Numero de contacto</label>
-                <input type="text" placeholder="" />
+                <input type="number" placeholder="" name="phone" required />
             </div>
         </div>
         <div class="button-form">
-            <Button color="bg-yellow" size="normal-button">Enviar</Button>
+            <button class="button-form-b">Enviar</button>
         </div>
     </form>
 </section>
@@ -101,6 +118,28 @@ import Button from "./shared/Button.astro";
         margin: 0px auto;
     }
 
+    .button-form-b {
+        width: 256px;
+        height: 55px;
+
+        position: relative;
+        border-radius: 10px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        justify-content: center;
+        transition: all 0.2s ease-in;
+
+        background-color: #fae053;
+        color: black;
+    }
+
+    .button-form-b:hover {
+        transform: translateY(-5px);
+    }
+
     @media (max-width: 1400px) {
         .inputs-container {
             display: flex;
@@ -143,6 +182,11 @@ import Button from "./shared/Button.astro";
         .form-section {
             margin: 0px auto;
             width: 100%;
+        }
+
+        .button-form-b {
+            width: 160px;
+            height: 45px;
         }
     }
 </style>
