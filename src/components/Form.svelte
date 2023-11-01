@@ -6,7 +6,7 @@
                 "service_9n9mmqv",
                 "template_4aqt93l",
                 e.target,
-                "_TMHiaJfNVMWSyBF8",
+                "_TMHiaJfNVMWSyBF8"
             )
             .then(
                 (result) => {
@@ -14,30 +14,54 @@
                 },
                 (error) => {
                     console.log("FAILED...", error.text);
-                },
+                }
             );
     }
 </script>
 
-<section class="form-general-section">
+<section class="form-general-section" id="form_section">
     <h2>Contáctanos</h2>
     <form class="form-section" on:submit|preventDefault={sendEmail}>
         <div class="inputs-container">
             <div class="input-form">
-                <label>Nombres</label>
-                <input type="text" placeholder="" name="name" required />
+                <label for="name">Nombres</label>
+                <input
+                    type="text"
+                    placeholder=""
+                    name="name"
+                    required
+                    id="name"
+                />
             </div>
             <div class="input-form">
-                <label>Apellidos</label>
-                <input type="text" placeholder="" name="lastname" required />
+                <label for="lastname">Apellidos</label>
+                <input
+                    type="text"
+                    placeholder=""
+                    name="lastname"
+                    required
+                    id="lastname"
+                />
             </div>
             <div class="input-form">
-                <label>Correo Electronico</label>
-                <input type="email" placeholder="" name="email" required />
+                <label for="email">Correo Electronico</label>
+                <input
+                    type="email"
+                    placeholder=""
+                    name="email"
+                    required
+                    id="email"
+                />
             </div>
             <div class="input-form">
-                <label>Numero de contacto</label>
-                <input type="number" placeholder="" name="phone" required />
+                <label for="phone">Numero de contacto</label>
+                <input
+                    type="number"
+                    placeholder=""
+                    name="phone"
+                    required
+                    id="phone"
+                />
             </div>
         </div>
         <div class="button-form">
@@ -55,8 +79,7 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-        box-shadow:
-            rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
             rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     }
 
