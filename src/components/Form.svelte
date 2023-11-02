@@ -54,7 +54,7 @@
                 />
             </div>
             <div class="input-form">
-                <label for="phone">Nímero de contacto</label>
+                <label for="phone">Número de contacto</label>
                 <input
                     type="number"
                     placeholder=""
