@@ -1,6 +1,5 @@
 ---
-import Button from "../shared/Button.astro";
-
+import "@fontsource/poppins/800.css";
 export const prerender = true;
 ---
 
@@ -8,22 +7,24 @@ export const prerender = true;
     <div class={`slide slide-1`}>
         <div class="selling-text-section">
             <div class="selling-text-title">
-                Tu página web esta <span class="highlight-word">cerca</span>,
-                hace falta un <span class="highlight-word">click</span>
+                Tu página web esta cerca, hace falta un <br /><span
+                    class="highlight-word hw-purple hw-slide">click</span
+                >
             </div>
             <p class="selling-text-description">
                 En el mundo digital actual, tu presencia en línea es más crucial
                 que nunca. Una página web no es solo una opción, ¡es una
                 necesidad para cualquier empresa seria!
             </p>
-            <Button color="bg-black" link="#form_section">Click!</Button>
         </div>
+        <div class="little-circles-slide-1"></div>
     </div>
     <div class={`slide slide-2`}>
         <div class="selling-text-section">
             <div class="selling-text-title">
-                Desarrollo <span class="highlight-word">rápido</span> y <span
-                    class="highlight-word">atractivo</span
+                Desarrollo <br />
+                <span class="highlight-word hw-yellow hw-slide"
+                    >rápido y atractivo</span
                 >
             </div>
             <p class="selling-text-description">
@@ -33,15 +34,14 @@ export const prerender = true;
                 Enfocados en cautivar a tus visitantes, mantenemos la velocidad
                 en primer plano.
             </p>
-            <Button color="bg-black" link="#form_section">Click!</Button>
         </div>
+        <div class="little-circles-slide-2"></div>
     </div>
     <div class={`slide slide-3`}>
         <div class="selling-text-section">
             <div class="selling-text-title">
-                <span class="highlight-word">Éxito</span> empresarial a través
-                de tu
-                <span class="highlight-word">página web</span>
+                Éxito empresarial a través de tu <br />
+                <span class="highlight-word hw-slide hw-green">página web</span>
             </div>
             <p class="selling-text-description">
                 Alcanza tus objetivos empresariales con nosotros. Nuestros
@@ -50,8 +50,8 @@ export const prerender = true;
                 de tu negocio. Isa Web Agency es tu camino hacia el éxito en
                 línea.
             </p>
-            <Button color="bg-black" link="#form_section">Click!</Button>
         </div>
+        <div class="little-circles-slide-3"></div>
     </div>
 </div>
 
@@ -66,15 +66,140 @@ export const prerender = true;
     }
 
     .slide-1 {
-        background-color: var(--primary);
+        background-color: #fed71a;
+        color: black;
+        position: relative;
     }
     .slide-2 {
-        background-color: var(--secondary);
+        background-color: #1fcb4e;
+        color: black;
+        position: relative;
     }
     .slide-3 {
         color: white;
         background-color: var(--tertiary);
+        position: relative;
     }
+
+    .slide-1::after {
+        content: "";
+        top: 50px;
+        left: 200px;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.39);
+        z-index: -1;
+    }
+
+    .slide-2::after {
+        content: "";
+        top: -250px;
+        right: 100px;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.39);
+    }
+
+    .slide-3::after {
+        content: "";
+        right: -250px;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.39);
+    }
+
+    /* CIRCLES */
+
+    .little-circles-slide-1::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        top: 15px;
+        left: 15px;
+        background-color: #5e17eb;
+    }
+
+    .little-circles-slide-1::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        bottom: 0;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    .little-circles-slide-2 {
+        position: absolute;
+
+        width: 200px;
+        height: 120px;
+
+        bottom: 100px;
+        right: 20%;
+    }
+
+    .little-circles-slide-2::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        top: 15px;
+        left: 15px;
+        background-color: #fed71a;
+    }
+
+    .little-circles-slide-2::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        bottom: 0;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    .little-circles-slide-3 {
+        position: absolute;
+
+        width: 200px;
+        height: 120px;
+
+        bottom: 100px;
+        right: 20%;
+    }
+
+    .little-circles-slide-3::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        top: 15px;
+        left: 15px;
+        background-color: #1fcb4e;
+    }
+
+    .little-circles-slide-3::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        bottom: 0;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    /* END CIRCLES */
 
     .slide {
         width: 100%;
@@ -98,8 +223,8 @@ export const prerender = true;
     }
 
     .selling-text-title {
-        font-weight: 700;
         font-size: clamp(18px, 4vw, 46px);
+        font-family: "Antonio";
     }
 
     .selling-text-description {
@@ -110,6 +235,11 @@ export const prerender = true;
         width: 300px;
         height: 300px;
         border-radius: 20px;
+    }
+
+    .hw-slide {
+        font-family: "Poppins";
+        font-weight: 800;
     }
 
     @media (max-width: 1200px) {
@@ -127,7 +257,7 @@ export const prerender = true;
     @media (max-width: 900px) {
         .selling-text-title {
             font-weight: 700;
-            font-size: 25px;
+            font-size: 30px;
         }
 
         .selling-text-section {
@@ -144,6 +274,43 @@ export const prerender = true;
         .selling-text-section {
             padding-left: 20px;
             padding-right: 20px;
+        }
+
+        .little-circles-slide-1 {
+            position: absolute;
+
+            width: 60px;
+            height: 120px;
+
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .little-circles-slide-2 {
+            position: absolute;
+
+            width: 60px;
+            height: 120px;
+
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .little-circles-slide-3 {
+            position: absolute;
+
+            width: 60px;
+            height: 120px;
+
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 </style>

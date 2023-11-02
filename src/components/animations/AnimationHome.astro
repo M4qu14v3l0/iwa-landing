@@ -10,6 +10,10 @@ const pictures: { pic: string }[] = [
     { pic: "/pictures/hero/web_eigth.webp" },
     { pic: "/pictures/hero/web_one.webp" },
     { pic: "/pictures/hero/web_two.webp" },
+    { pic: "/pictures/hero/web_three.webp" },
+    { pic: "/pictures/hero/web_four.webp" },
+    { pic: "/pictures/hero/web_five.webp" },
+    { pic: "/pictures/hero/web_six.webp" },
 ];
 ---
 
@@ -30,17 +34,17 @@ const pictures: { pic: string }[] = [
     .box {
         position: absolute;
         width: 100vw;
-        height: 200vh;
+        height: 300vh;
         z-index: -1;
         background-color: #fae053;
         margin-top: -160px;
-        transform: translateX(200px) translateY(-480px) rotate(34deg);
+        transform: translateX(100px) translateY(-480px) rotate(34deg);
         display: flex;
         align-items: center;
     }
 
     .content-box {
-        margin-top: 20px;
+        margin-top: -220px;
         margin-left: 20px;
         position: relative;
         display: grid;
@@ -81,7 +85,7 @@ const pictures: { pic: string }[] = [
         scrollTrigger: {
             trigger: ".animation",
             start: "-=380",
-            end: "+=600",
+            end: "+=530",
             scrub: 1,
             // markers: true,
         },

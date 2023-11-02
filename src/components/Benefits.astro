@@ -3,6 +3,8 @@ import ArrowRight from "./icons/ArrowRight.astro";
 import Handshake from "./icons/Handshake.astro";
 import Multiple from "./icons/Multiple.astro";
 import Star from "./icons/Star.astro";
+
+import "@fontsource/poppins/600.css";
 ---
 
 <section class="benefits-general-section">
@@ -49,7 +51,7 @@ import Star from "./icons/Star.astro";
         align-items: center;
         flex-wrap: wrap;
         gap: 40px;
-        margin-top: 200px;
+        margin-top: 300px;
         padding-left: clamp(70px, 18%, 700px);
         padding-right: clamp(70px, 18%, 700px);
     }
@@ -90,6 +92,7 @@ import Star from "./icons/Star.astro";
 
     .card h2 {
         font-size: clamp(18px, 2vw, 32px);
+        font-weight: 600;
     }
 
     .card a {

@@ -75,12 +75,11 @@
         margin-left: clamp(70px, 18%, 700px);
         margin-right: clamp(70px, 18%, 700px);
         margin-top: 200px;
-        height: 400px;
+        height: 50vh;
         display: flex;
+        justify-content: center;
         flex-direction: column;
         gap: 40px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     }
 
     .form-general-section h2 {
@@ -128,6 +127,8 @@
         padding: 0px 10px;
         top: -9px;
         left: 20px;
+
+        user-select: none;
     }
 
     .input-form input {
@@ -163,6 +164,29 @@
         transform: translateY(-5px);
     }
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover {
+        background-color: transparent;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    input:focus {
+        outline: none; /* O outline: transparent; */
+    }
+
     @media (max-width: 1400px) {
         .inputs-container {
             display: flex;
@@ -196,6 +220,7 @@
         .form-general-section {
             margin-left: 20px;
             margin-right: 20px;
+            height: 30vh;
         }
 
         .input-form {
