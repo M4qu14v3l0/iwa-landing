@@ -7,5 +7,13 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   output: 'hybrid',
   adapter: vercel(),
-  integrations: [svelte()]
+  integrations: [
+    svelte(),
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ]
 });
