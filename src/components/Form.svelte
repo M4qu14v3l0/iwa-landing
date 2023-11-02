@@ -44,7 +44,7 @@
                 />
             </div>
             <div class="input-form">
-                <label for="email">Correo Electronico</label>
+                <label for="email">Correo Electrónico</label>
                 <input
                     type="email"
                     placeholder=""
@@ -54,7 +54,7 @@
                 />
             </div>
             <div class="input-form">
-                <label for="phone">Numero de contacto</label>
+                <label for="phone">Nímero de contacto</label>
                 <input
                     type="number"
                     placeholder=""
@@ -141,11 +141,12 @@
     .button-form {
         margin: 0px auto;
     }
-
+    
     .button-form-b {
         width: 256px;
         height: 55px;
-
+        
+        font-family: 'Poppins';
         position: relative;
         border-radius: 10px;
         font-weight: 600;
