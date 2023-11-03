@@ -1,0 +1,27 @@
+---
+//	Components
+import Layout from "../layouts/Layout.astro";
+
+import AnimationSellings from "../components/IsaEnterprise/animations/AnimationSellings.astro";
+import Hero from "../components/IsaEnterprise/Hero.astro";
+import Benefits from "../components/IsaEnterprise/Benefits.astro";
+import Form from "../components/IsaEnterprise/Form.svelte";
+import LayoutEnterprise from "../layouts/LayoutEnterprise.astro";
+---
+
+<Layout title="ISA Digital Agency">
+    <LayoutEnterprise>
+        <main>
+            <Hero />
+            <AnimationSellings />
+            <Benefits />
+            <Form client:only />
+        </main>
+    </LayoutEnterprise>
+</Layout>
+
+<style>
+    main {
+        height: 100%;
+    }
+</style>

@@ -1,0 +1,115 @@
+---
+//Fonts
+import "@fontsource/poppins";
+
+import "@fontsource/antonio";
+// Components
+import Navbar from "../components/IsaEnterprise/Navbar.astro";
+import Footer from "../components/IsaEnterprise/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Isa Digital Agency: Diseño web atractivo, desarrollo rápido y asesoramiento experto para impulsar tu éxito en línea. ¡Construye una presencia digital sólida y atrae a tus clientes potenciales con nosotros!"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <!-- Google tag (gtag.js) -->
+    </head>
+    <body>
+        <Navbar />
+        <slot />
+        <Footer />
+    </body>
+    <style is:global>
+        :root {
+            --primary: rgb(255, 222, 89);
+            --secondary: #00bf63;
+            --tertiary: #5e17eb;
+
+            --green: #00ff65;
+            --yellow: #ffcc00;
+            --purple: #874aff;
+        }
+
+        .highlight-word {
+            font-size: clamp(18px, 6vw, 80px);
+        }
+
+        .hw-h-p {
+            position: relative;
+        }
+        .hw-h-s {
+            position: relative;
+        }
+        .hw-h-t {
+            position: relative;
+        }
+
+        .hw-h-p::before {
+            /* Highlight color */
+            background-color: var(--primary);
+            content: "";
+            position: absolute;
+            width: calc(100% + 4px);
+            height: 30%;
+            left: -2px;
+            bottom: 0;
+            z-index: -1;
+            transform: rotate(-2deg);
+        }
+        .hw-h-s::before {
+            /* Highlight color */
+            background-color: var(--secondary);
+            content: "";
+            position: absolute;
+            width: calc(100% + 4px);
+            height: 30%;
+            left: -2px;
+            bottom: 0;
+            z-index: -1;
+            transform: rotate(-2deg);
+        }
+        .hw-h-t::before {
+            /* Highlight color */
+            background-color: var(--tertiary);
+            content: "";
+            position: absolute;
+            width: calc(100% + 4px);
+            height: 30%;
+            left: -2px;
+            bottom: 0;
+            z-index: -1;
+            transform: rotate(-2deg);
+        }
+
+        .hw-size {
+            font-size: clamp(18px, 4vw, 60px);
+        }
+
+        .hw-purple {
+            color: #5e17eb;
+        }
+        .hw-yellow {
+            color: #fed71a;
+        }
+        .hw-green {
+            color: #1fcb4e;
+        }
+
+        @media (max-width: 900px) {
+            .highlight-word {
+                font-size: 45px;
+            }
+
+            .hw-size {
+                font-size: 30px;
+            }
+        }
+    </style>
+</html>

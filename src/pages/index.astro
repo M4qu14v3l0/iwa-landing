@@ -1,24 +1,28 @@
 ---
 //	Components
 import Layout from "../layouts/Layout.astro";
-
-import AnimationSellings from "../components/animations/AnimationSellings.astro";
-import Hero from "../components/Hero.astro";
-import Benefits from "../components/Benefits.astro";
-import Form from "../components/Form.svelte";
 ---
 
 <Layout title="ISA Digital Agency">
 	<main>
-		<Hero />
-		<AnimationSellings />
-		<Benefits />
-		<Form client:only />
+		<section class="selection-page-section">
+			<div class="option-">ISA WOW</div>
+			<div class="option-">ISA ENTERPRISE</div>
+		</section>
 	</main>
 </Layout>
 
 <style>
 	main {
 		height: 100%;
+	}
+
+	.selection-page-section {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.selection-page-section > div {
+		height: 100vh;
 	}
 </style>

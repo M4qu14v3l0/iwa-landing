@@ -28,38 +28,25 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<!-- Google tag (gtag.js) -->
 
-
 		<title>{title}</title>
 	</head>
 
-	<script
-	async
-	src=`https://www.googletagmanager.com/gtag/js?id=G-9YNRXBBJXF`
+	<script async src=`https://www.googletagmanager.com/gtag/js?id=G-9YNRXBBJXF`
 	></script>
-	<script >
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag("js", new Date());
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-	gtag("config", "G-9YNRXBBJXF");
+		gtag("config", "G-9YNRXBBJXF");
 	</script>
 
 	<body>
-		<Navbar />
 		<slot />
-		<Footer />
-	</body><style is:global>
-		:root {
-			--primary: rgb(255, 222, 89);
-			--secondary: #00bf63;
-			--tertiary: #5e17eb;
-
-			--green: #00ff65;
-			--yellow: #ffcc00;
-			--purple: #874aff;
-		}
+	</body>
+	<style>
 		html {
 			font-family: "Poppins";
 			background: white;
@@ -77,81 +64,6 @@ const { title } = Astro.props;
 			width: 100%;
 			height: auto;
 			overflow-x: hidden;
-		}
-
-		.highlight-word {
-			font-size: clamp(18px, 6vw, 80px);
-		}
-
-		.hw-h-p {
-			position: relative;
-		}
-		.hw-h-s {
-			position: relative;
-		}
-		.hw-h-t {
-			position: relative;
-		}
-
-		.hw-h-p::before {
-			/* Highlight color */
-			background-color: var(--primary);
-			content: "";
-			position: absolute;
-			width: calc(100% + 4px);
-			height: 30%;
-			left: -2px;
-			bottom: 0;
-			z-index: -1;
-			transform: rotate(-2deg);
-		}
-		.hw-h-s::before {
-			/* Highlight color */
-			background-color: var(--secondary);
-			content: "";
-			position: absolute;
-			width: calc(100% + 4px);
-			height: 30%;
-			left: -2px;
-			bottom: 0;
-			z-index: -1;
-			transform: rotate(-2deg);
-		}
-		.hw-h-t::before {
-			/* Highlight color */
-			background-color: var(--tertiary);
-			content: "";
-			position: absolute;
-			width: calc(100% + 4px);
-			height: 30%;
-			left: -2px;
-			bottom: 0;
-			z-index: -1;
-			transform: rotate(-2deg);
-		}
-
-		.hw-size {
-			font-size: clamp(18px, 4vw, 60px);
-		}
-
-		.hw-purple {
-			color: #5e17eb;
-		}
-		.hw-yellow {
-			color: #fed71a;
-		}
-		.hw-green {
-			color: #1fcb4e;
-		}
-
-		@media (max-width: 900px) {
-			.highlight-word {
-				font-size: 45px;
-			}
-
-			.hw-size {
-				font-size: 30px;
-			}
 		}
 	</style>
 </html>
