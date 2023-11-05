@@ -1,7 +1,7 @@
 <script>
     import emailjs from "@emailjs/browser";
 
-    let sentMessage = true;
+    let sentMessage = false;
 
     function sendEmail(e) {
         emailjs
