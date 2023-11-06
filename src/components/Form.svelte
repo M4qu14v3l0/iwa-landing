@@ -76,7 +76,7 @@
     </div>
 
     <div class={`${sentMessage ? "show-message" : "hidden-content"}`}>
-        ¡Gracias por comunicarte!, Te contactaremos muy pronto.
+        ¡Gracias por comunicarte! Te contactaremos muy pronto.
     </div>
 </section>
 
