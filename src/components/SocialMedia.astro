@@ -1,0 +1,107 @@
+---
+import Facebook from "./icons/Social/Facebook.astro";
+import Instagram from "./icons/Social/Instagram.astro";
+import Linkedin from "./icons/Social/Linkedin.astro";
+import Whatsapp from "./icons/Social/Whatsapp.astro";
+import "@fontsource/poppins/600.css";
+---
+
+<section class="social-media-section">
+    <div>
+        <h2>¡Síguenos en</h2><span class="hw-size hw-purple"
+            >redes sociales!</span
+        >
+    </div>
+    <div class="media-icons-general">
+        <div class="media-icons-container">
+            <div>
+                <a
+                    href="https://www.facebook.com/isa.agencyofficial"
+                    target="_blank"><Facebook />isa.agencyofficial</a
+                >
+            </div>
+            <div>
+                <a
+                    href="https://www.linkedin.com/company/isa-digital-agency/"
+                    target="_blank"><Linkedin />isa-digital-agency</a
+                >
+            </div>
+            <div>
+                <a
+                    href="https://www.instagram.com/isa.agencyofficial/"
+                    target="_blank"><Instagram />isa.agencyofficial</a
+                >
+            </div>
+            <div>
+                <a href="" target="_blank"><Whatsapp />+51 933 760 767</a>
+            </div>
+        </div>
+        <img src="/pictures/logo/minimal_logo.svg" />
+    </div>
+</section>
+
+<style>
+    .social-media-section {
+        padding-left: clamp(60px, 40vw, 200px);
+        padding-right: clamp(60px, 40vw, 200px);
+
+        height: 200px;
+
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 200px;
+    }
+
+    .social-media-section h2 {
+        font-size: 30px;
+        font-weight: 600;
+        margin: 5px;
+    }
+
+    .social-media-section span {
+        font-family: "Antonio";
+    }
+
+    .media-icons-general {
+        position: relative;
+        display: flex;
+        height: 200px;
+        box-shadow: 0px 4px 17px 0px #00000040;
+        border-radius: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-icons-general img {
+        position: absolute;
+        top: -60px;
+        left: -40px;
+    }
+
+    .media-icons-container {
+        height: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-icons-container > div > a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-decoration: none;
+        color: black;
+        transition: all 0.5s ease;
+    }
+
+    .media-icons-container > div > a:hover {
+        fill: var(--purple);
+        transform: scale(1.1);
+        color: var(--purple);
+    }
+</style>

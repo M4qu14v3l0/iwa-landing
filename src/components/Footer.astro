@@ -1,7 +1,5 @@
 ---
-import Facebook from "./icons/Social/Facebook.astro";
-import Instagram from "./icons/Social/Instagram.astro";
-import Linkedin from "./icons/Social/Linkedin.astro";
+import "@fontsource/poppins/500.css";
 ---
 
 <footer>
@@ -74,7 +72,7 @@ import Linkedin from "./icons/Social/Linkedin.astro";
     </div>
 
     <section>
-        <ul class="socials">
+        <!-- <ul class="socials">
             <li>
                 <a
                     href="https://www.facebook.com/isa.agencyofficial"
@@ -93,15 +91,18 @@ import Linkedin from "./icons/Social/Linkedin.astro";
                     target="_blank"><Instagram /></a
                 >
             </li>
-        </ul>
-        <ul>
-            <p>
-                "En Isa Web Agency, transformamos tu visión en una experiencia
-                web que cautiva, convierte y triunfa en el mundo digital. Tu
-                éxito es nuestro código fuente."
-            </p>
-        </ul>
-        <p class="legal">ISA © 2023 All rights reserved</p>
+        </ul> -->
+        <img src="/pictures/logo/bola_amarillofuerte.svg" />
+        <div class="right-side-footer">
+            <ul>
+                <p>
+                    "En Isa Web Agency, transformamos tu visión en una
+                    experiencia web que cautiva, convierte y triunfa en el mundo
+                    digital. Tu éxito es nuestro código fuente."
+                </p>
+            </ul>
+            <p class="legal">ISA © 2023 All rights reserved</p>
+        </div>
     </section>
 </footer>
 
@@ -139,15 +140,41 @@ import Linkedin from "./icons/Social/Linkedin.astro";
     }
 
     section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 40% 1fr;
+
         gap: 15px;
         width: 100%;
         margin-top: 180px;
         padding-left: clamp(60px, 40vw, 200px);
         padding-right: clamp(60px, 40vw, 200px);
+    }
+
+    section img {
+        width: 200px;
+        height: 200px;
+        margin: 0px auto;
+    }
+
+    .right-side-footer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    .right-side-footer::before {
+        content: "";
+        height: 120px;
+        width: 1px;
+        background-color: black;
+        position: absolute;
+        left: -60px;
+    }
+
+    .legal {
+        font-weight: 500;
     }
 
     section .socials a {
@@ -168,7 +195,7 @@ import Linkedin from "./icons/Social/Linkedin.astro";
     }
 
     ul p {
-        text-align: center;
+        text-align: left;
         font-style: italic;
     }
 
