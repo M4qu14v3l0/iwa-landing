@@ -72,26 +72,6 @@ import "@fontsource/poppins/500.css";
     </div>
 
     <section>
-        <!-- <ul class="socials">
-            <li>
-                <a
-                    href="https://www.facebook.com/isa.agencyofficial"
-                    target="_blank"><Facebook /></a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://www.linkedin.com/company/isa-digital-agency/"
-                    target="_blank"><Linkedin /></a
-                >
-            </li>
-            <li>
-                <a
-                    href="https://www.instagram.com/isa.agencyofficial/"
-                    target="_blank"><Instagram /></a
-                >
-            </li>
-        </ul> -->
         <img src="/pictures/logo/bola_amarillofuerte.svg" />
         <div class="right-side-footer">
             <ul>
@@ -199,6 +179,15 @@ import "@fontsource/poppins/500.css";
         font-style: italic;
     }
 
+    @media (max-width: 1300px) {
+        section {
+            display: grid;
+            grid-template-columns: 40% 1fr;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+
     @media (max-width: 900px) {
         svg {
             top: 100px;
@@ -208,26 +197,34 @@ import "@fontsource/poppins/500.css";
         footer {
             text-align: center;
             height: 360px;
-            margin-top: 180px;
+            margin-top: 0px;
         }
 
         ul {
             margin: 0;
         }
+
         section {
             gap: 10px;
             width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            grid-template-columns: 1fr;
+            margin-top: 0px;
+        }
+
+        .right-side-footer p {
+            text-align: center;
+        }
+
+        .right-side-footer::before {
+            display: none;
         }
     }
 
     @media (max-width: 900px) {
-        section {
-            padding-left: 20px;
-            padding-right: 20px;
+        footer {
+            height: 460px;
         }
-    }
-
-    footer {
-        margin-top: 60px;
     }
 </style>
