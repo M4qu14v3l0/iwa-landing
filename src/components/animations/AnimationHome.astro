@@ -60,6 +60,12 @@ const pictures: { pic: string }[] = [
         height: 300px;
     }
 
+    /* @media (max-height: 600px) {
+        .box {
+            transform: translateX(-200px) translateY(-480px) rotate(34deg);
+        }
+    } */
+
     @media (max-width: 900px) {
         .animation {
             display: none;
@@ -84,10 +90,11 @@ const pictures: { pic: string }[] = [
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".animation",
-            start: "-=380",
+            // -=380
+            start: "-=300px",
             end: "+=530",
             scrub: 1,
-            // markers: true,
+            markers: true,
         },
     });
 
