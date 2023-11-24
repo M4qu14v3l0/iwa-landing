@@ -14,13 +14,28 @@ const pictures: { pic: string }[] = [
     { pic: "/pictures/hero/web_four.webp" },
     { pic: "/pictures/hero/web_five.webp" },
     { pic: "/pictures/hero/web_six.webp" },
+    { pic: "/pictures/hero/web_seven.webp" },
+    { pic: "/pictures/hero/web_eigth.webp" },
 ];
 ---
 
 <div class="animation">
     <div class="box" id="bigBox">
         <div class="content-box">
-            {pictures.map((picture) => <img src={picture.pic} alt="imagen" />)}
+            <div class="img-container">
+                {
+                    pictures.map((picture) => (
+                        <img src={picture.pic} alt="imagen" />
+                    ))
+                }
+            </div>
+            <div class="img-container-2">
+                {
+                    pictures.map((picture) => (
+                        <img src={picture.pic} alt="imagen" />
+                    ))
+                }
+            </div>
         </div>
     </div>
 </div>
@@ -38,20 +53,17 @@ const pictures: { pic: string }[] = [
         z-index: -1;
         background-color: #fae053;
         margin-top: -160px;
-        transform: translateX(100px) translateY(-480px) rotate(34deg);
+        transform: translateX(-8vw) translateY(-480px) rotate(34deg);
         display: flex;
         align-items: center;
     }
 
     .content-box {
-        margin-top: -220px;
+        height: 100vh;
+        margin-top: -65%;
         margin-left: 20px;
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     .box img {
@@ -60,12 +72,60 @@ const pictures: { pic: string }[] = [
         height: 300px;
     }
 
+    .img-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        animation: animate 30s linear infinite;
+        animation-delay: calc(30s * -1);
+    }
+    .img-container-2 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        animation: animate_2 30s linear infinite;
+        animation-delay: calc(30s / -2);
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    @keyframes animate_2 {
+        0% {
+            transform: translateY(0%);
+        }
+        100% {
+            transform: translateY(-200%);
+        }
+    }
+
     /* @media (max-height: 600px) {
         .box {
             transform: translateX(-200px) translateY(-480px) rotate(34deg);
         }
     } */
 
+    @media (max-width: 1300px) {
+        .box {
+            transform: translateX(10vw) translateY(-480px) rotate(34deg);
+        }
+    }
     @media (max-width: 900px) {
         .animation {
             display: none;
